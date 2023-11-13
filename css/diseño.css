@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: black;
+    overflow: hidden;
+    height: 100vh;
+    /* Oculta el scrollbar */
+}
+
+
+h1 {
+    font-size: 5vw;
+}
+
+h2 {
+    text-shadow: 1px 1px 1px black;
+    font-size: 0.8vw;
+}
+
+.bounce {
+    font-size: 0.6vw;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/52916624_xl.jpg');
+    /* Cambia 'tu_imagen.jpg' por la ruta de tu imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -1;
+    /* Coloca el fondo detrás del contenido */
+    opacity: 0.2;
+    filter: blur(5px)
+        /* Ajusta la opacidad del fondo según tus preferencias */
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.github {
+    display: block;
+    color: white;
+}
+
+.gitlog {
+    width: 2vw;
+    /* La imagen ocupará el 70% del ancho de la ventana gráfica (viewport width) */
+    height: auto;
+    /* Mantendrá la proporción original de la imagen */
+    max-width: 100%;
+}
+
+#content {
+    position: relative;
+    /* Asegura que el contenido esté por encima del fondo */
+    z-index: 1;
+    /* Asegura que el contenido esté por encima del fondo */
+    text-align: center;
+    padding: 50px;
+    color: #ffffff;
+    /* Color del texto, ajusta según sea necesario para que sea visible en el fondo */
+}
+
+.roastbeef {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+    pointer-events: none;
+    /* Permite que los clics pasen a través del div overlay */
+    z-index: 1;
+    /* Asegura que el overlay esté por encima del contenido */
+}
+
+.gradient-animation {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    /* Ajusta la altura del gradiente al 50% de la ventana gráfica */
+    background: linear-gradient(to bottom,
+            rgba(255, 165, 0, 0) 0%,
+            rgba(139, 57, 19, 0.1) 50%,
+            rgba(255, 17, 0, 0.3) 100%);
+    background-size: 200% 200%;
+    /* Doble del tamaño para dar espacio para la transición */
+    animation: flameAnimation 10s linear infinite;
+    /* Duración y tipo de animación */
+}
+
+@keyframes flameAnimation {
+
+    0%,
+    100% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 0%;
+    }
+}
+
+
+
+.image-container {
+    position: absolute;
+    top: -100px;
+    /* Inicialmente fuera de la vista */
+    left: -100px;
+    /* Inicialmente fuera de la vista */
+    transition: top 1s ease-in-out, left 1s ease-in-out;
+}
+
+.image-container2 {
+    position: absolute;
+    bottom: -100px;
+    /* Inicialmente fuera de la vista */
+    right: -100px;
+    /* Inicialmente fuera de la vista */
+    transition: bottom 1s ease-in-out, right 1s ease-in-out;
+}
+
+
+.image-container3 {
+    position: absolute;
+    bottom: -400px;
+    /* Inicialmente fuera de la vista */
+    left: 0px;
+    /* Inicialmente fuera de la vista */
+    transition: bottom 1s ease-in-out 2.5s, left 1s ease-in-out 2.5s;
+    /* Retraso de 3 segundos */
+}
+
+
+body.loaded .image-container2 {
+    bottom: -50px;
+    /* Posición final desde abajo */
+    right: -50px;
+    /* Posición final desde la derecha */
+}
+
+
+body.loaded .image-container3 {
+    bottom: 0;
+    /* Posición final desde abajo */
+    right: 0;
+    /* Posición final desde la derecha */
+}
+
+
+.image-container img {
+    width: 50vw;
+    /* La imagen ocupará el 70% del ancho de la ventana gráfica (viewport width) */
+    height: auto;
+    /* Mantendrá la proporción original de la imagen */
+    max-width: 100%;
+    opacity: 0.8;
+    /* Ajusta el tamaño de la imagen según sea necesario */
+}
+
+.image-container2 img {
+    width: 50vw;
+    /* La imagen ocupará el 70% del ancho de la ventana gráfica (viewport width) */
+    height: auto;
+    /* Mantendrá la proporción original de la imagen */
+    max-width: 100%;
+    opacity: 0.7;
+    /* Ajusta el tamaño de la imagen según sea necesario */
+}
+
+.image-container3 img {
+    width: 20vw;
+    /* La imagen ocupará el 70% del ancho de la ventana gráfica (viewport width) */
+    height: auto;
+    /* Mantendrá la proporción original de la imagen */
+    max-width: 100%;
+    /* Ajusta el tamaño de la imagen según sea necesario */
+}
+
+body.loaded .image-container {
+    top: -50px;
+    /* Posición final desde arriba */
+    left: -50px;
+    /* Posición final desde la izquierda */
+}
+
+.link-with-border {
+    border-bottom: 1px solid white;
+}
