@@ -5,6 +5,7 @@ body {
     background-color: black;
     overflow: hidden;
     height: 100vh;
+    font-size: 16px;
     /* Oculta el scrollbar */
 }
 
@@ -15,11 +16,13 @@ h1 {
 
 h2 {
     text-shadow: 1px 1px 1px black;
-    font-size: 0.8vw;
+    font-size: 1rem;
+    /* Tamaño de fuente para h2 */
 }
 
 .bounce {
-    font-size: 0.6vw;
+    font-size: 0.8rem;
+    /* Tamaño de fuente para la clase bounce */
 }
 
 body::before {
@@ -70,7 +73,7 @@ canvas {
     z-index: 1;
     /* Asegura que el contenido esté por encima del fondo */
     text-align: center;
-    padding: 50px;
+    padding: 5%;
     color: #ffffff;
     /* Color del texto, ajusta según sea necesario para que sea visible en el fondo */
 }
@@ -154,14 +157,23 @@ canvas {
 
 .image-container3 {
     position: absolute;
-    bottom: -400px;
+    bottom: -900px;
     /* Inicialmente fuera de la vista */
     left: 0px;
     /* Inicialmente fuera de la vista */
-    transition: bottom 1s ease-in-out 2.5s, left 1s ease-in-out 2.5s;
+    transition: bottom 1s ease-in-out 3s, left 1s ease-in-out 3s;
     /* Retraso de 3 segundos */
 }
 
+/* Imágenes */
+.image-container img,
+.image-container2 img,
+.image-container3 img {
+    width: 100%;
+    /* Haz que las imágenes ocupen el 100% del contenedor */
+    height: auto;
+    max-width: 100%;
+}
 
 body.loaded .image-container2 {
     bottom: -50px;
@@ -217,4 +229,266 @@ body.loaded .image-container {
 
 .link-with-border {
     border-bottom: 1px solid white;
+}
+
+
+/* Reglas de responsividad adicionales */
+@media screen and (max-width: 576px) {
+
+    .image-container img,
+    .image-container2 img {
+        width: 100%;
+    }
+
+    #content {
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 8vw;
+    }
+
+    h2 {
+        font-size: 2rem;
+        /* Tamaño de fuente para h2 */
+    }
+
+    .image-container3 img {
+        width: 30vh;
+    }
+
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+
+    .image-container img,
+    .image-container2 img {
+        width: 100%;
+    }
+
+    #content {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 7.5vw;
+    }
+
+    h2 {
+        font-size: 2rem;
+        /* Tamaño de fuente para h2 */
+    }
+
+    .image-container3 img {
+        width: 30vh;
+    }
+
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+
+    .image-container img,
+    .image-container2 img {
+        width: 100%;
+    }
+
+    #content {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 7.5vw;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+        /* Tamaño de fuente para h2 */
+    }
+
+    .image-container3 img {
+        width: 30vh;
+    }
+
+
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+
+    .image-container img,
+    .image-container2 img {
+        width: 100%;
+    }
+
+    #content {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 6vw;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        /* Tamaño de fuente para h2 */
+    }
+
+    .image-container3 img {
+        width: 30vh;
+    }
+
+
+}
+
+@media screen and (min-width: 1201px) {
+
+    .image-container img,
+    .image-container2 img {
+        width: 100%;
+    }
+
+    #content {
+        padding: 20px;
+    }
+
+
+    h1 {
+        font-size: 6vw;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        /* Tamaño de fuente para h2 */
+    }
+
+    .image-container3 img {
+        width: 30vh;
+    }
+
+}
+
+/* Reglas de responsividad para tamaños de pantalla más pequeños, enfocadas en móviles */
+@media screen and (max-width: 320px) {
+
+    /* Estilos para pantallas más pequeñas que 320px */
+    h1 {
+        font-size: 10vw;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .bounce {
+        font-size: 1rem;
+    }
+
+    .image-container img,
+    .image-container2 img {
+        width: 100%;
+    }
+
+    #content {
+        padding: 3px;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+
+    /* Estilos para pantallas entre 321px y 375px */
+    h1 {
+        font-size: 9vw;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .bounce {
+        font-size: 0.9rem;
+    }
+
+    .image-container img,
+    .image-container2 img {
+        width: 100%;
+    }
+
+    #content {
+        padding: 4px;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+
+    /* Estilos para pantallas entre 376px y 425px */
+    h1 {
+        font-size: 8vw;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .bounce {
+        font-size: 0.8rem;
+    }
+
+    .image-container img,
+    .image-container2 img {
+        width: 100%;
+    }
+
+    #content {
+        padding: 5px;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 767px) {
+
+    /* Estilos para pantallas entre 426px y 767px */
+    h1 {
+        font-size: 7vw;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .bounce {
+        font-size: 0.7rem;
+    }
+
+    .image-container img,
+    .image-container2 img {
+        width: 100%;
+    }
+
+    #content {
+        padding: 6px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    /* Estilos para pantallas entre 768px y 991px */
+    h1 {
+        font-size: 6vw;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .bounce {
+        font-size: 0.6rem;
+    }
+
+    .image-container img,
+    .image-container2 img {
+        width: 100%;
+    }
+
+    #content {
+        padding: 7px;
+    }
 }
